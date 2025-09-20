@@ -590,6 +590,7 @@ contains(QMAKE_PLATFORM, linux) {
     metainfo.files+=qt/org.openrgb.OpenRGB.metainfo.xml
     systemd_service.path=/etc/systemd/system
     systemd_service.files+=qt/openrgb.service
+    systemd_service.CONFIG=no_check_exist
     INSTALLS += target desktop icon metainfo udev_rules systemd_service
 }
 
@@ -683,6 +684,7 @@ contains(QMAKE_PLATFORM, freebsd) {
     icon.files+=qt/org.openrgb.OpenRGB.png
     metainfo.path=$$PREFIX/share/metainfo/
     metainfo.files+=qt/org.openrgb.OpenRGB.metainfo.xml
+    rules.CONFIG=no_check_exist
     rules.path=$$PREFIX/lib/udev/rules.d/
     rules.files+=60-openrgb.rules
     INSTALLS += target desktop icon metainfo rules
